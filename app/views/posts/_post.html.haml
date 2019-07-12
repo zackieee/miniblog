@@ -1,0 +1,16 @@
+.contents
+  .content
+    .content__main
+      %p.content__main__date<>
+        = @post.updated_at.strftime("%Y/%m/%d %H:%M")
+      %p.content__main__title<>
+        = @post.title
+      %p.content__main__content<>
+        = @post.content
+    .content__action
+      - if user_signed_in? &&  current_user.id == post.user_id
+        =link_to '編集', edit_post_path(@post.id), class:'content__action__edit', method: :get
+        =link_to '削除', post_path(@post.id), class:'content__action__destroy', method: :delete
+      - if current_user.id != post.user_id
+        =link_to 'ブロガーページ', blog_path(@post.blog.id), class:'content__action__page', method: :get
+  .contents__paginate

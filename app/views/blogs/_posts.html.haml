@@ -1,0 +1,19 @@
+.contents-mypage
+  - @blog.posts.each do |post|
+    .content
+      .content__main
+        %p.content__main__date<>
+          = post.updated_at.strftime("%Y/%m/%d %H:%M")
+        %p.content__main__title<>
+          = post.title
+        %p.content__main__content<>
+          = truncate(post.content, length: 100)
+          - if post.content.length >= 100
+            = link_to '続きを読む', post_path(post.id), class:'content__main__content__continued', method: :get
+      .content__action
+        =link_to '詳細', post_path(post.id), class:'content__action__show', method: :get
+        - if user_signed_in? &&  current_user.id == blog.user_id
+          =link_to '編集', edit_post_path(post.id), class:'content__action__edit', method: :get
+          =link_to '削除', post_path(post.id), class:'content__action__destroy', method: :delete
+  .contents__paginate
+    -# = paginate(@blog.posts)

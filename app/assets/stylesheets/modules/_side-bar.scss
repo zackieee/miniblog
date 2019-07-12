@@ -1,0 +1,30 @@
+.user-introduction{
+  float:left;
+  position:fixed;
+  width:300px;
+  height:calc(100vh - 140px);
+  margin-top:140px;
+  background-color:#eee;
+  border-right:solid 1px gray;
+  p{
+    margin:10px;
+    color:#434a54;
+    font-size:14px;
+    font-weight:bold;
+
+  }
+  &__image{
+    width:150px;
+    height:150px;
+    margin:0 20px;
+    background-color:gray;
+    background-position:center;
+    background-repeat:no-repeat;
+    border-radius:5px;
+  }
+  img{
+    width:150px;
+    height:150px;
+    border-radius: 5px;
+  }
+}

@@ -1,0 +1,10 @@
+= form_for @post do | f |
+  .post-form__field
+    .post-form__field__title
+      %label.post-form__label{for:"post_title"}<>
+      = f.text_field :title, class:'post-form__field__input-title', id:'post_title',placeholder:'タイトルを入力してください',value:"#{@post.title}"
+    .post-form__field__content
+      %label.post-form__label{for:"post_content"}<>
+      = f.text_area :content, class:'post-form__field__input-content', id:'post_content',placeholder:'ブログの内容を入力してください',value:"#{@post.content}"
+  .post-form__action
+    = f.submit class:'post-form__action-btn'

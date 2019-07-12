@@ -1,0 +1,40 @@
+.user-form
+  %h2 ユーザ新規登録
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .field
+      .field__image
+        %label.field__image-input{for:"file"}
+        #img_field{:onclick => "$('#file').click()"}
+          - if @user.image.present?
+            = image_tag(@user.image.url)
+          - else
+            %P NO IMAGE
+        =f.file_field :image, class: "image", id: "file"
+    .field
+      .field__input-form
+        = f.label :ユーザ名
+        %br/
+        = f.text_field :name, autofocus: true, autocomplete: "name"
+    .field
+      .field__input-form
+        = f.label :メールアドレス
+        %br/
+        = f.email_field :email, autocomplete: "email"
+    .field
+      .field__input-form
+        = f.label :パスワード
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} 文字以上)
+        %br/
+        = f.password_field :password, autocomplete: "new-password"
+    .field
+      .field__input-form
+        = f.label :パスワード（再入力）
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password"
+    .actions
+      .actions__user-submit-btn
+        = f.submit "Sign up", class:'user-submit-btn'
+  = render "devise/shared/links"

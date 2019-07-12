@@ -1,0 +1,19 @@
+.post-form{
+  width:600px;
+  margin:0 auto;
+  h1{
+    padding:40px 0;
+    color:orange;
+    font-size:20px;
+    text-align: center;
+  }
+  &__field{
+    &__input-title{
+      width:50%;
+      margin-bottom:10px;
+    }
+    &__input-content{
+      width:100%;
+    }
+  }
+}

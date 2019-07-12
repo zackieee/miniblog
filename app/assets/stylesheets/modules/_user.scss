@@ -1,0 +1,73 @@
+.user-form{
+  width:400px;
+  margin:60px auto;
+  padding:10px auto;
+  text-align:center;
+  border:solid 1px lightgray;
+  border-radius: 5px;
+
+  a{
+    color:gray;
+    font-size:12px;
+  }
+
+  h2{
+    width:100%;
+    margin:0 auto;
+    padding:0 auto;
+    color:white;
+    font-size:16px;
+    text-align:center;
+    background-color:orange;
+  }
+  .field{
+    &__image{
+      .image{
+        display:none;
+      }
+      #img_field{
+        width:100px;
+        height:100px;
+        margin:10px auto;
+        padding:0 auto;
+        background-color:gray;
+        background-position:center;
+        background-repeat:no-repeat;
+        border-radius:5px;
+        p{
+          color:white;
+          font-size:12px;
+          text-align:center;
+          line-height:100px;
+        }
+        img{
+          width:100px;
+          height:100px;
+          border-radius: 5px;
+        }
+      }
+    }
+    &__input-form{
+      display:inline-block;
+      width:100%;
+      margin:5px 0;
+      color:gray;
+      font-size:14px;
+      text-align:center;
+    }
+  }
+
+  .actions{
+    &__user-submit-btn{
+      display:inline-block;
+      width:100%;
+      text-align:center;
+      a{
+        width:100%;
+        color:gray;
+        text-align:center;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,34 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Miniblog
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .header
+      .header-bar
+        %h1.header-bar__logo<>
+          = link_to 'BLOG', root_path
+        %ul.header-bar__list
+          -# = fa_icon 'ellipsis-v'
+          -if user_signed_in?
+            %li.header-bar__list__menu<>
+              = link_to 'ログアウト', destroy_user_session_path, class:'header-bar__list__menu__logout-btn', method: :delete
+              -if current_user.blog != nil
+                %li.header-bar__list__menu<>
+                  = link_to 'マイページ', blogs_path, class:'header-bar__list__menu__mypage-btn'
+                %li.header-bar__list__menu<>
+                  = link_to '投稿する', new_post_path, class:'header-bar__list__menu__new-btn'
+              -else
+                %li.header-bar__list__menu<>
+                  = link_to 'ブログ開設', new_blog_path, class:'header-bar__list__menu__mypage-create-btn'
+          -else
+            %ul.header-bar__list
+              %li.header-bar__list__menu<>
+                = link_to 'ログイン', new_user_session_path, class:'header-bar__list__menu__login-btn'
+              %li.header-bar__list__menu<>
+                = link_to 'ユーザ登録', new_user_registration_path, class:'header-bar__list__menu__signup-btn'
+  = yield
