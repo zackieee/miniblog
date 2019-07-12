@@ -25,6 +25,12 @@
               -else
                 %li.header-bar__list__menu<>
                   = link_to 'ブログ開設', new_blog_path, class:'header-bar__list__menu__mypage-create-btn'
+            %li.header-bar__list__menu<>  
+              .header-bar__list__menu__user-image
+                - if user_signed_in? && current_user.image.present?
+                  = image_tag(current_user.image.url)
+                - else
+                  %P NO IMAGE
           -else
             %ul.header-bar__list
               %li.header-bar__list__menu<>
