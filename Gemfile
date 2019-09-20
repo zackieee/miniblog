@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'letter_opener_web', '~> 1.0'
 end
 
 group :development do
@@ -58,6 +59,10 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+group :production do
+  gem 'unicorn', '5.4.1'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -69,3 +74,21 @@ gem 'pry-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem "font-awesome-rails"
+
+#facebook/google認証
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+
+#都道府県入力
+gem 'active_hash'
+
+#クレジットカード
+gem 'payjp'
+
+#認証用
+gem 'recaptcha', require: "recaptcha/rails"
+
+#SMS認証
+gem 'twilio-ruby', '~> 5.6.0'
