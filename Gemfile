@@ -75,20 +75,20 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem "font-awesome-rails"
 
-#facebook/google認証
-gem "omniauth-rails_csrf_protection"
-gem 'omniauth'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-facebook'
+# #facebook/google認証
+# gem "omniauth-rails_csrf_protection"
+# gem 'omniauth'
+# gem 'omniauth-google-oauth2'
+# gem 'omniauth-facebook'
 
-#都道府県入力
-gem 'active_hash'
+# #都道府県入力
+# gem 'active_hash'
 
-#クレジットカード
-gem 'payjp'
+# #クレジットカード
+# gem 'payjp'
 
-#認証用
-gem 'recaptcha', require: "recaptcha/rails"
+# #認証用
+# gem 'recaptcha', require: "recaptcha/rails"
 
-#SMS認証
-gem 'twilio-ruby', '~> 5.6.0'
+# #SMS認証
+# gem 'twilio-ruby', '~> 5.6.0'
