@@ -1,5 +1,5 @@
 class RenameBlogToPost < ActiveRecord::Migration[5.2]
-  def change
+  def up
     rename_table :blogs, :posts
   end
 end
