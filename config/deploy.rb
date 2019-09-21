@@ -29,8 +29,8 @@ set :keep_releases, 5
 after 'deploy:publishing', 'deploy:restart'
 
 namespace :deploy do
+  append :linked_files, 'config/master.key'
   task :restart do
     invoke 'unicorn:restart'
   end
-  append :linked_files, 'config/master.key'
 end
