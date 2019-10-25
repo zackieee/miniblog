@@ -1,6 +1,6 @@
 class SampleMailer < ApplicationMailer
 
-  # attr_accessor :email,:title,:name
+  attr_accessor :email,:title,:name
 
   def sample_mail(email,title,name)                            #仮引数に@付きのインスタンス変数は指定できませんので注意
     @email = email
